@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ShoppingList extends Component {
   render() {
     const shoppingList = ['leite', 'arroz', 'feijão', 'banana', 'carne'];
+    
     const itens = shoppingList.map((item, index) => {
       return <li key={index}>{item}</li>
     })
