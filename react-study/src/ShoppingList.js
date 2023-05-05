@@ -9,7 +9,7 @@ class ShoppingList extends Component {
     })
 
     return (
-      <div>
+      <div className='shoppingList'>
         <h2>Lista de compras</h2>
         <ul>
           {itens}

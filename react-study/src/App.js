@@ -1,6 +1,7 @@
 import HelloWorld from './HelloWord';
 import UserProfile from './UserProfile';
 import ShoppingList from './ShoppingList';
+import Buttons from './Buttons';
 
 //Componente que irá conter toda a aplicação
 function App() {
@@ -22,12 +23,19 @@ function App() {
   //Retornar o componente HelloWorld
   return (
     <main>
-      <HelloWorld />
-      
-      /* Dois Componentes utilizando as props */
-      <UserProfile user={ joao }/>
-      <UserProfile user={ amelia }/>
-      <ShoppingList />
+      <h1>Componentes e Props</h1>
+      <h2>Cada quadrado é um componente diferente</h2>
+      <div className="div-items">
+        <HelloWorld />
+        <UserProfile user={ joao }/>
+        <UserProfile user={ amelia }/>
+        <ShoppingList />
+      </div>
+
+      <h1>Componentes com Estados e Eventos: Constructors, this e funções de evento </h1>
+      <div className="div-items">
+        <Buttons />
+      </div>
     </main>
   );
 }

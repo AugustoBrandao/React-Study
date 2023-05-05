@@ -5,7 +5,7 @@ class UserProfile extends React.Component {
   render() {
     const { user } = this.props;
     return (
-      <div>
+      <div className="userProfile">
         <p> {user.name} </p>
         <p> {user.email} </p>
         <Image source={user.avatar} alternativeText="User avatar" />

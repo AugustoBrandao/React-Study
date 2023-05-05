@@ -5,7 +5,7 @@ class HelloWorld extends React.Component {
     //Exibir algo na tela
     render(){
         return(
-            <div>
+            <div className="helloWorld">
                 <h1>Augusto Brandão</h1>
                 <p>Sou um Osasquence, de 24 anos, que está estudando sobre a biblioteca React.</p>
                 <h2>Minhas Habilidades:</h2>
