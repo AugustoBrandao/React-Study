@@ -1,5 +1,5 @@
 import React from "react";
-import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'; //npm i react-icons
 
 export default class FavoriteButton extends React.Component {
   state = {
