@@ -33,7 +33,7 @@ h1 {
   font-size: 20px;
 }
 
-.userProfile, .shoppingList, .div-btn, .favoriteButton {
+.userProfile, .shoppingList, .div-btn, .favoriteButton, .form, .card {
   border: solid 3px black;
   width: 350px;
   height: 350px;
@@ -78,4 +78,9 @@ h1 {
   border: solid 2px black;
   color: black;
   margin-left: 20px;
+}
+
+.form label{
+  display: block;
+  margin-bottom: 20px;
 }
