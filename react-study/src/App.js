@@ -5,6 +5,10 @@ import ShoppingList from './ShoppingList';
 import Buttons from './Buttons';
 import Form from './Form.js';
 import Card from './Card';
+import Counter from './Counter';
+import RickAndMorty from './RickAndMorty';
+import DadJoke from './DadJoke';
+import Carousel from './Carousel'
 
 //Componente que irá conter toda a aplicação
 export default class App extends React.Component {
@@ -15,9 +19,14 @@ export default class App extends React.Component {
       idade: 0,
       vaiComparecer: false,
       palavraChaveFavorita: 'Estado',
+    },
+    carousel: {
+      showCarousel: true,
+      currentCategory: 'nature',
     }
   };
  
+  // FUNÇÕES DO COMPONENTE FORM
   handleChange = ({ target }) => {
     const { name } = target;
     const valueField = target.type === 'checkbox' ? target.checked : target.value;
@@ -29,8 +38,17 @@ export default class App extends React.Component {
     })); //[chave]: valor
   };
 
+  //FUNÇÕES DO COMPONENTE CAROUSEL
+  toggleCarousel = () => {
+    this.setState((prevState) => ({
+      carousel: {
+        showCarousel: !prevState.carousel.showCarousel,
+      }
+    }));
+  }
+
   render() {
-    const { form } = this.state;
+    const { form, carousel:{ showCarousel, currentCategory } } = this.state;
 
     const joao = {
       id: 102,
@@ -66,6 +84,17 @@ export default class App extends React.Component {
       <div className="div-items">
         <Form form={ form } handleChange={ this.handleChange }/> 
         <Card form={ form } />
+      </div>
+
+      <h1>Ciclo de Vida em React</h1>
+      <div className="div-items">
+        <Counter />
+        <RickAndMorty />
+        <DadJoke />
+      </div>
+      <div className="div-items">
+        <button onClick={ this.toggleCarousel }>Toggle Carousel</button>
+        { showCarousel && <Carousel category={ currentCategory } /> }
       </div>
     </main>
     );

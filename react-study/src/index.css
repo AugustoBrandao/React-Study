@@ -33,7 +33,7 @@ h1 {
   font-size: 20px;
 }
 
-.userProfile, .shoppingList, .div-btn, .favoriteButton, .form, .card {
+.userProfile, .shoppingList, .div-btn, .favoriteButton, .form, .card, .counter, .App {
   border: solid 3px black;
   width: 350px;
   height: 350px;
@@ -83,4 +83,17 @@ h1 {
 .form label{
   display: block;
   margin-bottom: 20px;
+}
+
+.App { width: 1550px }
+
+.App img { 
+  width: 80px;
+  height: 80px;
+  display: inline;
+}
+
+.div-inline{
+  display: inline-block;
+  margin: 20px;
 }
