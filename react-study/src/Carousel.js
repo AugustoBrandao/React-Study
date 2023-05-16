@@ -16,6 +16,10 @@ class Carousel extends Component {
     await this.getImages();
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timeID);
+  }
+
   getImages = async () => {
     const { category } = this.props;
     try {
@@ -24,9 +28,20 @@ class Carousel extends Component {
         isLoading: false,
         images,
       });
+
+      this.timeID = setInterval(() => {
+        console.count('Imagem mudou: ');
+        this.nextImage();
+      }, 4000);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  nextImage = () => {
+    const { images, currentImageIndex } = this.state;
+    const newIndex = (currentImageIndex + 1) % images.length;
+    this.setState({ currentImageIndex: newIndex })
   }
 
   render() {
@@ -54,6 +69,7 @@ class Carousel extends Component {
         <button
           className="carousel-button carousel-button-right"
           onClick={ () => {
+            this.nextImage();
             console.log('mover imagem manualmente');
           } }
         >

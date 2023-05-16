@@ -10,6 +10,10 @@ import RickAndMorty from './RickAndMorty';
 import DadJoke from './DadJoke';
 import Carousel from './Carousel'
 
+import { BrowserRouter, Route } from 'react-router-dom'
+import Home from './components/Home';
+import About from './components/About';
+
 //Componente que irá conter toda a aplicação
 export default class App extends React.Component {
   state = {
@@ -95,6 +99,14 @@ export default class App extends React.Component {
       <div className="div-items">
         <button onClick={ this.toggleCarousel }>Toggle Carousel</button>
         { showCarousel && <Carousel category={ currentCategory } /> }
+      </div>
+
+      <h1>React Router: Projeto React Router no GitHub</h1>
+      <div className="div-items">
+        <BrowserRouter>
+          <Route exact path="/" component={Home} />
+          <Route path="/about/:lastName" render={(props) => <About {...props} nome="Usuário" />} /> 
+        </BrowserRouter>
       </div>
     </main>
     );
