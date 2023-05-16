@@ -12,6 +12,9 @@ npm install
 npm run dev
 
 https://react.dev                      //Documentação mais recente do React
+
+npm install react-router-dom@v5        //Instalar o React Router
+https://v5.reactrouter.com             //Documentação React Router V5
 `````
 
 Next, -> framework que usarei futuramente
